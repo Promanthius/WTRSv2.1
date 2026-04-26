@@ -1,0 +1,17 @@
+# Disable script execution
+<FilesMatch "\.(php|php3|php4|php5|php7|php8|phtml|pl|py|jsp|asp|htm|html|shtml|sh|cgi)$">
+    Deny from all
+</FilesMatch>
+
+# Only allow certain file types specifically for uploads
+<FilesMatch "\.(pdf)$">
+    Allow from all
+</FilesMatch>
+
+# Force download behavior if desired (optional)
+# <FilesMatch "\.pdf$">
+#    ForceType application/pdf
+#    Header set Content-Disposition "attachment"
+# </FilesMatch>
+
+Options -Indexes

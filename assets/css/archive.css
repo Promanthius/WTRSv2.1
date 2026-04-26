@@ -1,0 +1,218 @@
+@import 'variables.css';
+
+/* ============================================================
+   WTRS ARCHIVE — Unified Academic Feed
+   ============================================================ */
+
+.archive-hero {
+  text-align: center;
+  padding: 5rem 1.5rem 4rem;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.archive-hero h1 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.archive-hero h1 span {
+  color: var(--crimson);
+  font-style: italic;
+}
+
+.archive-hero p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Floating Modern Search Bar - Aligned with Brand */
+.search-bar-giant {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  background: #FFFFFF;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  padding: 0.5rem;
+}
+
+.search-bar-giant:focus-within {
+  border-color: var(--crimson);
+  box-shadow: 0 10px 30px -5px rgba(139, 0, 0, 0.1);
+}
+
+.search-bar-giant input {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-size: 1.1rem;
+  font-family: inherit;
+  outline: none;
+  background: transparent;
+  color: var(--text-dark);
+}
+
+.search-bar-giant .btn-submit {
+  border-radius: 6px;
+  padding: 0 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--crimson);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.search-bar-giant .btn-submit:hover {
+  background: var(--crimson-deep);
+}
+
+/* Results Layout */
+.archive-layout {
+  padding: 3rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.results-title {
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.results-title span {
+  color: var(--crimson);
+}
+
+/* Thesis Result Card - Unified with card-academic */
+.thesis-card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+
+.thesis-card:hover {
+  border-color: var(--crimson);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.thesis-thumb {
+  width: 100px;
+  height: 130px;
+  background: var(--off-white);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson);
+}
+
+.thesis-thumb i { font-size: 2.5rem; }
+.thesis-thumb-text { font-size: 0.6rem; font-weight: 800; margin-top: 0.5rem; letter-spacing: 0.1em; color: var(--crimson); }
+
+.thesis-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.thesis-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.thesis-date { 
+  font-size: 0.75rem; 
+  color: var(--text-muted); 
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.thesis-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.thesis-authors {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.thesis-authors i { color: var(--crimson); }
+
+.thesis-abstract {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.thesis-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.btn-view { 
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--crimson); 
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-view:hover { color: var(--crimson-deep); }

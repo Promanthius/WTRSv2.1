@@ -1,0 +1,153 @@
+/* -------------- */
+/* RESUBMIT THESIS DASHBOARD */
+/* -------------- */
+
+.resubmit-header {
+  margin-bottom: var(--spacing-xl);
+}
+.resubmit-breadcrumb {
+  font-size: 0.8rem;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-lg);
+}
+.resubmit-breadcrumb a { color: var(--color-text-muted); text-decoration: none; }
+.resubmit-breadcrumb span { color: var(--color-primary); font-weight: 700; }
+
+.resubmit-title {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.resubmit-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+}
+
+/* MAIN CARD */
+.resubmit-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl) 3rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 6px solid #A67300; /* Distinct gold/olive border */
+  max-width: 900px;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+.form-label i { font-size: 1rem; color: #A67300; }
+
+.read-only-box {
+  background: #F9FAFB;
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  border-left: 3px solid #D1D5DB;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.feedback-box {
+  background: #FEFAED; /* Pale yellow/gold */
+  border: 1px solid #F5E6AF;
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+}
+.fb-avatar {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: #374151; color: white;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fb-avatar i { font-size: 1.5rem; }
+.fb-content h5 { font-size: 0.85rem; color: var(--color-text-main); margin-bottom: 0.25rem; }
+.fb-content p { font-size: 0.85rem; color: var(--color-text-muted); font-style: italic; line-height: 1.5; }
+
+.textarea-field {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  outline: none;
+  min-height: 120px;
+  resize: vertical;
+}
+.textarea-field:focus { border-color: var(--color-primary); }
+.field-hint { font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.5rem; display: block; }
+
+/* Upload Dropzone */
+.upload-dropzone {
+  border: 2px dashed #FECACA; /* Pale red dashed border */
+  border-radius: var(--radius-sm);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  background: #FEF2F2; /* Very light red bg */
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+.upload-dropzone:hover { background: #FEE2E2; }
+.upload-icon-box {
+  width: 50px; height: 50px; background: #FCA5A5; color: #7F1D1D;
+  border-radius: 12px; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 1rem;
+}
+.upload-dropzone h4 { font-size: 1rem; color: var(--color-text-main); margin-bottom: 0.25rem; }
+.upload-dropzone p { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1.25rem; }
+.btn-choose {
+  background: #E5E7EB; color: var(--color-text-main); font-weight: 600; font-size: 0.8rem;
+  border: none; padding: 0.5rem 1rem; border-radius: var(--radius-pill); cursor: pointer;
+}
+
+/* Card Footer */
+.resubmit-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+.submit-version-info {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.85rem; color: var(--color-text-muted);
+}
+.sv-icon {
+  width: 28px; height: 28px; background: #FDE68A; color: #B45309;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+}
+.submit-version-info strong { color: #DC2626; }
+
+.resubmit-actions { display: flex; align-items: center; gap: 1.5rem; }
+.btn-cancel { background: none; border: none; font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted); cursor: pointer; }
+.btn-cancel:hover { color: var(--color-text-main); }
+.btn-submit-rev {
+  background: var(--color-primary); color: white; border: none; font-size: 0.9rem; font-weight: 700;
+  padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); cursor: pointer;
+  display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 6px -1px rgba(114, 0, 0, 0.2);
+}
+.btn-submit-rev:hover { background: #620000; }
+
+.bottom-credits {
+  text-align: center; font-size: 0.65rem; color: #9CA3AF;
+  letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4rem; padding-bottom: 2rem;
+}

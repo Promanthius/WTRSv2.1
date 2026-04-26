@@ -1,0 +1,52 @@
+:root {
+  /* — Core Brand Colors (Synchronized with Login) — */
+  --crimson:        #8B0000;
+  --crimson-deep:   #6B0000;
+  --crimson-mid:    #A00000;
+  --crimson-light:  rgba(139, 0, 0, 0.08);
+  --crimson-faint:  rgba(139, 0, 0, 0.03);
+  
+  --gold:           #C8952A;
+  --gold-light:     #E5B04A;
+  --gold-faint:     rgba(200, 149, 42, 0.12);
+  
+  /* — Neutral Surfaces & Typography — */
+  --off-white:      #F8F5F0; /* Premium creamy white */
+  --surface:        #FFFFFF;
+  --text-dark:      #1A1108; /* Deep brown-black for high-end feel */
+  --text-mid:       #4A3728;
+  --text-muted:     #8B7355;
+  
+  --border:         #E8E0D4;
+  --border-strong:  #D4C8B8;
+  
+  /* — Typography Stacks — */
+  --font-serif:     'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-base:      'Nunito', 'Inter', system-ui, sans-serif;
+  
+  /* — Layout Helpers — */
+  --max-width:      1200px;
+  --sidebar-w:      260px;
+  --topbar-h:       70px;
+  
+  /* — Borders & Radii — */
+  --radius-sm:      8px;
+  --radius:         14px;
+  --radius-lg:      20px;
+  
+  /* — Shadows & Motion — */
+  --shadow-sm:      0 2px 8px rgba(26, 17, 8, 0.06);
+  --shadow-md:      0 8px 24px rgba(26, 17, 8, 0.08);
+  --shadow-lg:      0 20px 48px rgba(26, 17, 8, 0.12);
+  --transition:     0.3s cubic-bezier(0.4, 0, 0, 1);
+  --transition-fast: 0.15s ease;
+
+  /* — Legacy & Utility Aliases (For Broad Compatibility) — */
+  --color-primary:      var(--crimson);
+  --color-primary-dark: var(--crimson-deep);
+  --color-accent:       var(--gold);
+  --color-surface:      var(--surface);
+  --color-border:       var(--border);
+  --color-text:         var(--text-dark);
+}
+

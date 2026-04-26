@@ -1,0 +1,227 @@
+/* -------------- */
+/* FORGOT PASSWORD PAGE */
+/* -------------- */
+
+body.forgot-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #F7F5F5; /* Very pale warm gray */
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Top Left Logo */
+.fp-top-logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.fp-logo-box {
+  width: 40px;
+  height: 40px;
+  background: #720000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
+.fp-brand-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #720000;
+}
+
+/* Central Card */
+.fp-card {
+  background: white;
+  width: 100%;
+  max-width: 440px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  border-top: 4px solid #720000;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
+/* Header Info */
+.fpc-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.fpc-icon {
+  width: 56px;
+  height: 56px;
+  background: #E5E7EB;
+  color: #720000;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+.fpc-title {
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+.fpc-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* Form */
+.fpc-form {
+  text-align: left;
+}
+.fpc-label {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.fpc-input-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.fpc-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--color-text-main);
+  outline: none;
+  font-family: inherit;
+  transition: 0.2s;
+}
+.fpc-input:focus {
+  border-color: var(--color-primary);
+}
+.fpc-icon-input {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9CA3AF;
+  font-size: 1.1rem;
+}
+
+/* Actions */
+.btn-send {
+  width: 100%;
+  background: #720000;
+  color: white;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: 0.2s;
+}
+.btn-send:hover {
+  background: #550000;
+}
+
+.fpc-divider {
+  height: 1px;
+  background: #E5E7EB;
+  margin: 2rem 0;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #720000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.btn-back:hover {
+  text-decoration: underline;
+}
+
+/* Bottom Footer Info */
+.fp-footer-info {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.fp-footer-text {
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+.fp-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.fp-footer-links a {
+  font-size: 0.7rem;
+  color: #720000;
+  text-decoration: none;
+}
+.fp-footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Right Watermark */
+.fp-watermark {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: #C2C2C2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.fp-watermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+}
+
+@media (max-width: 600px) {
+  .fp-top-logo { position: static; margin-bottom: 2rem; justify-content: center; width: 100%; }
+  .fp-card { margin: 1rem; width: auto; padding: 2rem 1.5rem; }
+  .fp-watermark { display: none; }
+}

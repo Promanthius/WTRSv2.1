@@ -1,0 +1,137 @@
+@import 'variables.css';
+
+/* ============================================================
+   WTRS GLOBAL — Unified Foundations
+   Aesthetic: Editorial-Academic · Crimson & Gold · Prestigious
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--text-dark);
+  background-color: var(--off-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Academic Typography Sync */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-base);
+  color: var(--text-dark);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+/* Global Buttons (Premium Dashboard Style) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.82rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--crimson);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: var(--crimson-deep);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text-dark);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--off-white);
+  border-color: var(--border-strong);
+}
+
+/* Unified Academic Components */
+.card-academic {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.card-academic:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+}
+
+.badge-approved { background: #ECFDF5; color: #065F46; }
+.badge-pending  { background: #FFFBEB; color: #92400E; }
+.badge-revision { background: #FEF2F2; color: #991B1B; }
+
+.dot { width: 6px; height: 6px; border-radius: 50%; }
+.dot-approved { background: #10B981; }
+.dot-pending  { background: #F59E0B; }
+.dot-revision { background: #EF4444; }
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-muted { color: var(--text-muted); font-size: 0.88rem; }
+.gold-text  { color: var(--gold); }

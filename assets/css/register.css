@@ -1,0 +1,468 @@
+/* -------------- */
+/* REGISTER PAGE SPECIFICS */
+/* -------------- */
+
+/* Overrides to adapt the auth-left panel from login.css */
+.auth-left.auth-left-register {
+  position: relative;
+  justify-content: flex-start;
+  gap: 0;
+  overflow: visible !important;
+  padding: 2rem 3rem;
+}
+
+/* Parent grid also clips — override for register page */
+body.auth-page:has(.auth-left-register) {
+  overflow: visible !important;
+}
+
+/* Scale down the register page hero to leave room for institutional card */
+.auth-left-register .auth-hero-text h1 {
+  font-size: 2.6rem !important;
+  margin-bottom: 0.5rem;
+}
+
+.auth-left-register .auth-hero-text p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+.auth-left-register .auth-brand {
+  margin-bottom: 2rem;
+}
+
+/* Ensure all direct children sit above the pseudo-element overlays */
+.auth-left-register .auth-brand,
+.auth-left-register .auth-hero-text,
+.auth-left-register .auth-info-card,
+.auth-left-register .avatar-stack-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* Push avatar stack to bottom */
+.auth-left-register .avatar-stack-wrap {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+/* ============================================================
+   FORM CARD — mirror login.css card typography exactly
+   ============================================================ */
+
+/* Card heading — matches login's .auth-form-wrapper h2 */
+.auth-form-wrapper h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4rem;
+  line-height: 1.1;
+}
+
+/* Card subline — matches login's .auth-form-wrapper > p */
+.auth-form-wrapper>p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+/* ============================================================
+   INSTITUTIONAL ACCESS CARD
+   ============================================================ */
+.auth-info-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.aic-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #E2AD2C;
+  margin-bottom: 1rem;
+}
+
+.aic-header i {
+  font-size: 1.25rem;
+}
+
+.auth-info-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* ============================================================
+   OVERLAPPING AVATARS
+   ============================================================ */
+.avatar-stack-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-stack img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #720000;
+  margin-left: -12px;
+  background: #E5E7EB;
+  object-fit: cover;
+}
+
+.avatar-stack img:first-child {
+  margin-left: 0;
+}
+
+.avatar-stack-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   FORM GRID
+   ============================================================ */
+.form-grid-2 {
+  font-family: 'Nunito', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   LABELS — match login's .input-label exactly
+   ============================================================ */
+.input-label,
+.input-group .input-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+/* ============================================================
+   PLAIN INPUT — match login's input styling
+   ============================================================ */
+/* Matches login.css .input-icon-wrapper input exactly */
+.input-plain {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Matches login.css placeholder exactly */
+.input-plain::placeholder {
+  color: rgba(139, 115, 85, 0.5);
+  font-weight: 400;
+  font-family: 'Nunito', sans-serif;
+}
+
+.input-plain:focus {
+  border-color: var(--crimson);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.08);
+}
+
+/* ============================================================
+   PASSWORD TOGGLE ICON WRAPPER
+   ============================================================ */
+.input-icon-right {
+  position: relative;
+}
+
+.input-icon-right i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.input-icon-right i:hover {
+  color: var(--crimson);
+}
+
+/* ============================================================
+   PASSWORD HINT
+   ============================================================ */
+.password-hint {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* ============================================================
+   SELECT — match login input style
+   ============================================================ */
+.select-plain {
+  width: 100%;
+  height: 45px;
+  padding: 0 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  /* same as .input-plain / login inputs */
+  font-weight: 500;
+  color: var(--text-dark);
+  background-color: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238B7355' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+}
+
+.select-plain:focus {
+  border-color: var(--crimson);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.08);
+}
+
+/* ============================================================
+   ACTIVATION CALLOUT
+   ============================================================ */
+.activation-callout {
+  background: #F8F5F0;
+  border-left: 3px solid #A67300;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ac-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #A67300;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.ac-content h5 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.ac-content p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ============================================================
+   BOTTOM ACTION ROW
+   ============================================================ */
+.register-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Register button — mirrors .btn-login from login.css */
+.btn-register {
+  position: relative;
+  padding: 0.9rem 2rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--crimson);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  box-shadow:
+    0 4px 14px rgba(139, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-register::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.55s ease;
+}
+
+.btn-register:hover {
+  background: var(--crimson-mid);
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 20px rgba(139, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.btn-register:hover::after {
+  left: 150%;
+}
+
+.btn-register:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(139, 0, 0, 0.3);
+}
+
+.btn-register i {
+  font-size: 1rem;
+  transition: transform var(--transition);
+}
+
+.btn-register:hover i {
+  transform: translateX(3px);
+}
+
+/* Login redirect text — mirrors .auth-bottom from login.css */
+.login-redirect {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.login-redirect a {
+  font-weight: 800;
+  color: var(--crimson);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  margin-left: 0.25rem;
+  transition: border-color var(--transition);
+}
+
+.login-redirect a:hover {
+  border-color: var(--crimson);
+}
+
+/* ============================================================
+   LEGAL FOOTER LINKS
+   ============================================================ */
+.bottom-legal-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.bottom-legal-links a {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.bottom-legal-links a:hover {
+  color: var(--text-dark);
+}
+
+/* ============================================================
+   ALERT — mirrors login.css .alert-error
+   ============================================================ */
+.alert-error {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #B91C1C;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-left: 3px solid #B91C1C;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.alert-success {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #047857;
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-left: 3px solid #047857;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
