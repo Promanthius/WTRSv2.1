@@ -1,0 +1,688 @@
+/* ============================================================
+   WTRS — Login Page  |  Enhanced Design
+   Aesthetic: Editorial-Academic · Refined · Prestigious
+   ============================================================ */
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --crimson: #8B0000;
+  --crimson-deep: #6B0000;
+  --crimson-mid: #A00000;
+  --crimson-light: rgba(139, 0, 0, 0.08);
+  --gold: #C8952A;
+  --gold-light: #E5B04A;
+  --off-white: #F8F5F0;
+  --surface: #FFFFFF;
+  --text-dark: #1A1108;
+  --text-mid: #4A3728;
+  --text-muted: #8B7355;
+  --border: #E8E0D4;
+  --shadow-sm: 0 2px 8px rgba(26, 17, 8, 0.06);
+  --shadow-md: 0 8px 32px rgba(26, 17, 8, 0.10);
+  --shadow-lg: 0 24px 64px rgba(26, 17, 8, 0.14);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  background: var(--off-white);
+  color: var(--text-dark);
+  overflow: hidden;
+}
+
+/* ---------- Layout ---------- */
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ============================================================
+   LEFT PANEL
+   ============================================================ */
+.auth-left {
+  position: relative;
+  background: var(--crimson-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  overflow: hidden;
+  animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* — Layered background textures — */
+.auth-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(200, 149, 42, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 10%, rgba(180, 0, 0, 0.4) 0%, transparent 50%),
+    linear-gradient(160deg, #6B0000 0%, #8B0000 40%, #7A0000 100%);
+  pointer-events: none;
+}
+
+/* — Geometric pattern overlay — */
+.auth-left::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+/* — SVG-style decorative circle — */
+.deco-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.deco-ring-1 {
+  width: 480px;
+  height: 480px;
+  bottom: -160px;
+  right: -160px;
+}
+
+.deco-ring-2 {
+  width: 320px;
+  height: 320px;
+  bottom: -80px;
+  right: -80px;
+  border-color: rgba(200, 149, 42, 0.12);
+}
+
+.deco-ring-3 {
+  width: 160px;
+  height: 160px;
+  bottom: 0;
+  right: 0;
+  border-color: rgba(200, 149, 42, 0.18);
+}
+
+/* — Top ornament line — */
+.auth-left-top-line {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  right: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* — Brand — */
+.auth-brand {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeUp 0.6s 0.2s both;
+}
+
+.brand-seal-box {
+  width: 68px;
+  height: 68px;
+
+  background: rgba(255, 255, 255, 0.12);
+  /* soft frosted, or set to transparent */
+
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.brand-seal-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-text h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.brand-text p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+/* — Hero text — */
+.auth-hero-text {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 0.6s 0.35s both;
+}
+
+.auth-hero-text h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.gold-text {
+  color: var(--gold-light);
+  font-style: normal;
+}
+
+/* Decorative rule under h1 */
+.auth-hero-text h1::after {
+  display: none;
+  /* using separate element instead */
+}
+
+.hero-rule {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: 1.25rem;
+  border-radius: 2px;
+}
+
+.auth-hero-text>p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 340px;
+  font-weight: 400;
+}
+
+/* — Stats — */
+.auth-stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 2.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.auth-stat-item {
+  flex: 1;
+  padding: 1.1rem 1.5rem;
+  text-align: center;
+}
+
+.auth-stat-item h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.auth-stat-item p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+/* — Footer — */
+.auth-footer-text {
+  position: relative;
+  z-index: 2;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  animation: fadeUp 0.6s 0.5s both;
+}
+
+/* ============================================================
+   RIGHT PANEL
+   ============================================================ */
+.auth-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--off-white);
+  overflow: hidden;
+  animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* — Dot-grid background — */
+.auth-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(139, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* — Soft light vignette center — */
+.auth-right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(248, 245, 240, 0.8) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* — Watermark — */
+.watermark {
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.55;
+  z-index: 10;
+}
+
+.watermark i {
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+/* — Form wrapper / card — */
+.auth-form-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 2.75rem 2.5rem;
+  box-shadow:
+    0 0 0 1px rgba(26, 17, 8, 0.06),
+    var(--shadow-lg),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  animation: cardReveal 0.7s 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Decorative top accent on card */
+.auth-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--crimson), transparent);
+  border-radius: 0 0 4px 4px;
+}
+
+.auth-form-wrapper h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4rem;
+  line-height: 1.1;
+}
+
+.auth-form-wrapper>p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+/* — Alert — */
+.alert-error {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #B91C1C;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-left: 3px solid #B91C1C;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* — Input Groups — */
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.input-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+}
+
+.forgot-link {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.forgot-link:hover {
+  color: var(--crimson);
+}
+
+/* — Input icon wrapper — */
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-wrapper i {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color var(--transition);
+  z-index: 1;
+}
+
+.input-icon-wrapper input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.75rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-icon-wrapper input::placeholder {
+  color: rgba(139, 115, 85, 0.5);
+  font-weight: 400;
+}
+
+.input-icon-wrapper input:focus {
+  border-color: var(--crimson);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.08);
+}
+
+.input-icon-wrapper input:focus+i,
+.input-icon-wrapper:focus-within i {
+  color: var(--crimson);
+}
+
+
+
+/* — Sign-in Button — */
+.btn-login {
+  position: relative;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--crimson);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow:
+    0 4px 14px rgba(139, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* shimmer sweep */
+.btn-login::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.55s ease;
+}
+
+.btn-login:hover {
+  background: var(--crimson-mid);
+  transform: translateY(-1px);
+  box-shadow:
+    0 8px 20px rgba(139, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.btn-login:hover::after {
+  left: 150%;
+}
+
+.btn-login:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(139, 0, 0, 0.3);
+}
+
+.btn-login i {
+  font-size: 1rem;
+  transition: transform var(--transition);
+}
+
+.btn-login:hover i {
+  transform: translateX(3px);
+}
+
+/* — Bottom link — */
+.auth-bottom {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.auth-bottom p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.auth-bottom a {
+  font-weight: 800;
+  color: var(--crimson);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.auth-bottom a:hover {
+  border-color: var(--crimson);
+}
+
+/* ============================================================
+   DIVIDER with OR
+   ============================================================ */
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.form-divider span {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--border);
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .auth-page {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .auth-left {
+    padding: 2rem 2rem 3rem;
+    min-height: 420px;
+  }
+
+  .auth-right {
+    padding: 3rem 1.5rem;
+  }
+
+  .auth-form-wrapper {
+    max-width: 100%;
+  }
+}

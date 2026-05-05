@@ -1,0 +1,254 @@
+/* Modernized Upload Page Layout */
+
+.upload-header {
+  margin-bottom: 3rem;
+  max-width: 48rem;
+}
+
+.upload-badge {
+  display: inline-block;
+  background-color: #FEF3C7;
+  color: #B45309;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.upload-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.upload-header p {
+  color: #6B7280;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Base Upload Form Layout */
+.upload-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Section styling */
+.form-section {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Metadata Form Fields */
+.metadata-group {
+  margin-bottom: 1.5rem;
+}
+
+.metadata-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* File Drop Zone Refactored */
+.file-drop-area {
+  border: 2px dashed #D1D5DB;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #F9FAFB;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.file-drop-area:hover, .file-drop-area.dragover {
+  border-color: var(--color-primary);
+  background-color: #FEF2F2;
+}
+
+.file-icon {
+  font-size: 3rem;
+  color: #9CA3AF;
+  margin-bottom: 1rem;
+  transition: color var(--transition-fast);
+}
+
+.file-drop-area:hover .file-icon {
+  color: var(--color-primary);
+}
+
+.file-drop-text {
+  font-size: 1rem;
+  color: #374151;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.file-drop-subtext {
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+.file-input-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Selected File Preview Box */
+.selected-file-preview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.selected-file-icon {
+  font-size: 2rem;
+  color: #DC2626; /* PDF Red */
+}
+
+.selected-file-details {
+  flex: 1;
+}
+
+.selected-file-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selected-file-size {
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+.clear-file-btn {
+  color: #9CA3AF;
+  transition: color var(--transition-fast);
+}
+.clear-file-btn:hover {
+  color: #EF4444;
+}
+
+/* Authors List */
+.author-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.author-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.author-row .input-field {
+  flex: 1;
+}
+
+.btn-remove-author {
+  color: #9CA3AF;
+  padding: 0.5rem;
+  background: #F9FAFB;
+  border-radius: var(--radius-md);
+  border: 1px solid #E5E7EB;
+  transition: all var(--transition-fast);
+}
+.btn-remove-author:hover {
+  background: #FEF2F2;
+  border-color: #FECACA;
+  color: #DC2626;
+}
+
+.btn-add-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+.btn-add-author:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Submission Actions */
+.submit-panel {
+  background-color: var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.submit-panel h3 {
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.submit-panel p {
+  font-size: 0.875rem;
+  color: #FECACA; /* primary 200 */
+  margin-bottom: 1.5rem;
+}
+
+.btn-submit-final {
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-submit-final:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}

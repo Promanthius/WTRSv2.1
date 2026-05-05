@@ -1,0 +1,127 @@
+/* -------------- */
+/* REVIEW QUEUE DASHBOARD */
+/* -------------- */
+
+.rev-header {
+  margin-bottom: var(--spacing-xl);
+}
+.rev-title {
+  font-size: 2.5rem;
+  color: #111827;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.rev-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+}
+
+/* TOP CONTROLS */
+.rev-controls {
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  align-items: flex-end;
+}
+.rc-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.rc-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-main); }
+.rc-search {
+  position: relative; width: 320px;
+}
+.rc-search i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #F87171; /* red icon */ }
+.rc-search input {
+  width: 100%; padding: 0.75rem 1rem 0.75rem 2.5rem; border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm); font-size: 0.85rem; outline: none; background: white;
+}
+.rc-tabs {
+  display: flex; background: #F3F4F6; border-radius: var(--radius-sm); padding: 4px;
+}
+.rc-tab {
+  border: none; background: none; font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted);
+  padding: 0.5rem 1.25rem; border-radius: 4px; cursor: pointer; transition: all 0.2s;
+}
+.rc-tab.active { background: white; color: var(--color-text-main); color: var(--color-primary); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+
+/* TABLE CONTAINER */
+.rev-table-wrapper {
+  background: #F3F4F6;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: var(--spacing-xl);
+}
+.r-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+}
+.r-table th {
+  text-align: left; padding: 1rem; font-size: 0.65rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted);
+  border-bottom: 2px solid #E5E7EB;
+}
+.r-table td {
+  padding: 1.5rem 1rem; vertical-align: middle; border-bottom: 1px solid #E5E7EB;
+}
+.r-table tr:last-child td { border-bottom: none; }
+
+/* Table specific cells */
+.r-thesis-title { font-weight: 700; font-size: 0.95rem; color: var(--color-text-main); line-height: 1.3; max-width: 250px; margin-bottom: 0.4rem; }
+.r-thesis-id { font-size: 0.7rem; color: #9CA3AF; letter-spacing: 0.05em; }
+
+.r-student-cell { display: flex; align-items: center; gap: 0.75rem; }
+.r-avatar { width: 32px; height: 32px; border-radius: 50%; background: #E5E7EB; color: #4B5563; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0;}
+.r-student-name { font-weight: 700; font-size: 0.85rem; color: var(--color-text-main); margin-bottom: 0.1rem; }
+.r-college { font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.2; }
+
+.r-version-pill { background: #E5E7EB; color: #4B5563; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 4px; display: inline-block; font-family: monospace; }
+
+.r-date { font-weight: 600; font-size: 0.85rem; color: var(--color-text-main); margin-bottom: 0.2rem; }
+.r-time { font-size: 0.7rem; color: #9CA3AF; letter-spacing: 0.05em; }
+
+.r-status-pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.7rem; font-weight: 800;
+}
+.r-status-pill .dot { width: 6px; height: 6px; border-radius: 50%; }
+.r-status-pill.pending { background: #FDE68A; color: #92400E; } /* Yellow */
+.r-status-pill.pending .dot { background: #92400E; }
+.r-status-pill.revision { background: #FECACA; color: #7F1D1D; } /* Red */
+.r-status-pill.revision .dot { background: #7F1D1D; }
+
+.btn-review {
+  background: #720000; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;
+  font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: 0.2s; text-align: center;
+}
+.btn-review:hover { background: #550000; }
+
+.r-pagination {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 1rem; margin-top: 1rem; border-top: 1px solid #E5E7EB;
+  font-size: 0.8rem; color: var(--color-text-muted);
+}
+.rp-controls { display: flex; gap: 0.5rem; }
+.rp-btn { width: 32px; height: 32px; border: 1px solid #D1D5DB; background: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.85rem; color: var(--color-text-main); }
+.rp-btn.active { background: #720000; color: white; border-color: #720000; font-weight: 700; }
+.rp-btn:hover:not(.active) { background: #F3F4F6; }
+
+/* BOTTOM WIDGETS */
+.rev-bottom-widgets {
+  display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-xl);
+}
+.rb-widget { border-radius: var(--radius-md); padding: var(--spacing-xl); position: relative; overflow: hidden; }
+
+.rb-tip { background: #F9FAFB; border: 1px solid #E5E7EB; }
+.rb-tip h3 { font-size: 1.1rem; color: var(--color-text-main); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+.rb-tip h3 i { color: #A67300; }
+.rb-tip p { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; max-width: 85%; margin-bottom: 1.5rem; position: relative; z-index: 2;}
+.rb-link { font-size: 0.8rem; font-weight: 700; color: #720000; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; position: relative; z-index: 2; }
+.rb-bg-icon { position: absolute; right: -20px; bottom: -30px; font-size: 10rem; color: rgba(0,0,0,0.03); z-index: 1; }
+
+.rb-health { background: #FEF3C7; border: 1px solid #FDE68A; } /* Pale yellow box */
+.rb-health-label { font-size: 0.7rem; font-weight: 800; color: #92400E; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+.rb-health-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.5rem; }
+.rh-title { font-size: 0.8rem; color: #92400E; font-weight: 600; }
+.rh-val { font-size: 2.5rem; font-weight: 800; color: #78350F; line-height: 1; }
+.rh-bar-bg { width: 100%; height: 6px; background: #FDE68A; border-radius: 3px; margin-bottom: 1rem; overflow: hidden; }
+.rh-bar-fill { height: 100%; background: #92400E; width: 92%; border-radius: 3px; }
+.rh-desc { font-size: 0.7rem; font-style: italic; color: #B45309; line-height: 1.4; }
