@@ -202,8 +202,8 @@ ob_start();
     display: block;
   }
 </style>
-<link rel="stylesheet" href="<?= BASE_URL ?>assets/vendor/cropperjs/cropper.min.css">
-<script src="<?= BASE_URL ?>assets/vendor/cropperjs/cropper.min.js"></script>
+<link rel="stylesheet" href="<?= BASE_URL ?>assets/vendor/cropperjs/cropper.css">
+<script src="<?= BASE_URL ?>assets/vendor/cropperjs/cropper.js"></script>
 <?php
 $extraCss = ob_get_clean();
 
