@@ -1,0 +1,6 @@
+/scratch/
+/database/wtrs.db
+/error.log
+/public/uploads/avatars/*
+!/public/uploads/avatars/.gitkeep
+/public/uploads/thesis_*
