@@ -34,7 +34,7 @@ Follow these steps to set up the system on your local machine:
     - Ensure `includes/config.php` has the correct database credentials (default is `root` with no password).
 5.  **Access**: Open [http://localhost/wtrs/](http://localhost/wtrs/) in your browser.
 
-## Sample Credentials (Filipino Personas)
+## Sample Credentials
 
 The system comes pre-seeded with 20 sample accounts (10 Student, 10 Faculty) for testing.  
 **Note:** All sample accounts use the password: `password123`
