@@ -82,12 +82,10 @@ try {
 } catch (PDOException $e) {}
 
 // Safety migration for profile fields in users table
-try {
-    $pdo->exec("ALTER TABLE users ADD COLUMN bio TEXT AFTER email");
-    $pdo->exec("ALTER TABLE users ADD COLUMN research_interests TEXT AFTER bio");
-    $pdo->exec("ALTER TABLE users ADD COLUMN experience TEXT AFTER research_interests");
-    $pdo->exec("ALTER TABLE users ADD COLUMN profile_pic VARCHAR(255) AFTER experience");
-} catch (PDOException $e) {}
+try { $pdo->exec("ALTER TABLE users ADD COLUMN bio TEXT AFTER email"); } catch (PDOException $e) {}
+try { $pdo->exec("ALTER TABLE users ADD COLUMN research_interests TEXT AFTER bio"); } catch (PDOException $e) {}
+try { $pdo->exec("ALTER TABLE users ADD COLUMN experience TEXT AFTER research_interests"); } catch (PDOException $e) {}
+try { $pdo->exec("ALTER TABLE users ADD COLUMN profile_pic VARCHAR(255) AFTER experience"); } catch (PDOException $e) {}
 
 // Safety migration for co_authors in theses table
 try {
