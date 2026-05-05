@@ -1,0 +1,74 @@
+[08-Apr-2026 03:55:21 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 03:55:35 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 03:56:46 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 03:57:13 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 04:03:28 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 04:05:14 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 04:16:52 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 04:19:32 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 04:45:15 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 05:08:02 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 05:10:11 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 05:12:18 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 05:29:59 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 05:30:37 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 05:42:05 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[08-Apr-2026 05:44:07 Europe/Berlin] PHP Warning:  Undefined variable $view in C:\xampp\htdocs\wtrs\includes\layout_sidebar.php on line 29
+[14-Apr-2026 20:33:18 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:33:22 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:33:23 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:33:32 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:33:42 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:33:51 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:34:04 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:34:11 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[14-Apr-2026 20:34:12 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in C:\xampp\htdocs\wtrs\student\index.php:131
+Stack trace:
+#0 C:\xampp\htdocs\wtrs\student\index.php(131): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\wtrs\student\index.php on line 131
+[15-Apr-2026 03:40:01 Europe/Berlin] PHP Warning:  Undefined variable $thesisId in C:\xampp\htdocs\wtrs\student\index.php on line 94
+[15-Apr-2026 03:43:53 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 231
+[15-Apr-2026 03:43:53 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 238
+[15-Apr-2026 03:44:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 231
+[15-Apr-2026 03:44:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 238
+[15-Apr-2026 03:44:29 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 231
+[15-Apr-2026 03:44:29 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 238
+[15-Apr-2026 03:45:03 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 231
+[15-Apr-2026 03:45:03 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 238
+[15-Apr-2026 03:46:06 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 231
+[15-Apr-2026 03:46:06 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 238
+[15-Apr-2026 03:46:41 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 231
+[15-Apr-2026 03:46:41 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\wtrs\faculty\review.php on line 238
