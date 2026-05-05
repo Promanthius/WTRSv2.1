@@ -62,9 +62,9 @@ The system comes pre-seeded with 20 sample accounts (10 Student, 10 Faculty) for
 | Manny Pacquiao | `manny.pacquiao@wmsu.edu.ph` | Student | Education |
 | Catriona Gray | `catriona.gray@wmsu.edu.ph` | Student | Science & Math |
 | Pia Wurtzbach | `pia.wurtzbach@wmsu.edu.ph` | Student | Nursing |
-| Bamboo Mañalac | `bamboo.manalac@wmsu.edu.ph` | Student | Engineering |
+| Bamboo Manalac | `bamboo.manalac@wmsu.edu.ph` | Student | Engineering |
 | Sarah Geronimo | `sarah.geronimo@wmsu.edu.ph` | Student | Computing Studies |
-| Vic Sotto | `vic.sotto@wmsu.edu.ph` | Student | Business Admin |
+| Vic Sotto | `vic.sotto@wmsu.edu.ph` | Student | Computing Studies |
 | Jose Manalo | `jose.manalo@wmsu.edu.ph` | Student | Computing Studies |
 
 ### Admin

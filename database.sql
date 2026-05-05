@@ -56,9 +56,9 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `role
 (15, 'Manny', 'Pacquiao', 'manny.pacquiao@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Education', 'Future educator.', 'Physical Education', 'Junior'),
 (16, 'Catriona', 'Gray', 'catriona.gray@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Science and Mathematics', 'Mathematics major.', 'Calculus', 'Freshman'),
 (17, 'Pia', 'Wurtzbach', 'pia.wurtzbach@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Nursing', 'Nursing student.', 'Clinical Care', 'Senior'),
-(18, 'Bamboo', 'Mañalac', 'bamboo.manalac@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Engineering', 'Engineering student.', 'Civil Engineering', 'Junior'),
+(18, 'Bamboo', 'Manalac', 'bamboo.manalac@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Engineering', 'Engineering student.', 'Civil Engineering', 'Junior'),
 (19, 'Sarah', 'Geronimo', 'sarah.geronimo@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Computing Studies', 'UI/UX enthusiast.', 'Design Systems', 'Sophomore'),
-(20, 'Vic', 'Sotto', 'vic.sotto@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Business Administration', 'Entrepreneurship major.', 'Marketing', 'Senior'),
+(20, 'Vic', 'Sotto', 'vic.sotto@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Computing Studies', 'Entrepreneurship minor.', 'Business Tech', 'Senior'),
 (21, 'Jose', 'Manalo', 'jose.manalo@wmsu.edu.ph', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student', 'College of Computing Studies', 'Blockchain explorer.', 'Cryptography', 'Junior');
 
 -- --------------------------------------------------------
