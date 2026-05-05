@@ -15,7 +15,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Handle Profile Picture
     $profile_pic = $user['profile_pic'] ?? null;
-    if (isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] === UPLOAD_ERR_OK) {
+    
+    // Check for cropped image data (Base64)
+    if (!empty($_POST['cropped_image'])) {
+        $data = $_POST['cropped_image'];
+        if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
+            $data = substr($data, strpos($data, ',') + 1);
+            $type = strtolower($type[1]); // jpg, png, etc
+            if (!in_array($type, ['jpg', 'jpeg', 'gif', 'png', 'webp'])) {
+                $flash = ['type' => 'error', 'message' => 'Invalid image type.'];
+            } else {
+                $data = base64_decode($data);
+                if ($data === false) {
+                    $flash = ['type' => 'error', 'message' => 'Base64 decode failed.'];
+                } else {
+                    $new_name = 'avatar_' . $user['id'] . '_' . time() . '.' . $type;
+                    $dest_dir = __DIR__ . '/../public/uploads/avatars/';
+                    if (!is_dir($dest_dir)) {
+                        mkdir($dest_dir, 0755, true);
+                    }
+                    if (file_put_contents($dest_dir . $new_name, $data)) {
+                        $profile_pic = $new_name;
+                    }
+                }
+            }
+        }
+    } 
+    // Fallback to standard upload if no cropped data
+    elseif (isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] === UPLOAD_ERR_OK) {
         $file = $_FILES['profile_pic'];
         $allowed = ['image/jpeg', 'image/png', 'image/webp'];
         if (in_array($file['type'], $allowed) && $file['size'] <= 2 * 1024 * 1024) {
@@ -129,7 +156,54 @@ ob_start();
   .account-meta-item { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.75rem; }
   .account-meta-item span:first-child { font-weight: 750; color: var(--text-muted); }
   .account-meta-item span:last-child { color: var(--text-dark); font-weight: 700; }
+
+  /* Cropper Modal Styles */
+  .crop-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    align-items: center; justify-content: center;
+    padding: 2rem;
+  }
+  .crop-container {
+    background: #fff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .crop-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .crop-body {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow: hidden;
+  }
+  .crop-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    background: var(--off-white);
+  }
+  #cropImage {
+    max-width: 100%;
+    display: block;
+  }
 </style>
+<link rel="stylesheet" href="<?= BASE_URL ?>assets/vendor/cropperjs/cropper.min.css">
+<script src="<?= BASE_URL ?>assets/vendor/cropperjs/cropper.min.js"></script>
 <?php
 $extraCss = ob_get_clean();
 
@@ -199,8 +273,9 @@ require_once __DIR__ . '/../includes/layout_sidebar.php';
 
           <div class="form-group">
             <label class="form-label">Profile Picture</label>
-            <input type="file" name="profile_pic" class="form-control" accept="image/jpeg,image/png,image/webp">
-            <span style="font-size: 0.75rem; color: var(--text-muted);">Recommended size: 200x200px. Max: 2MB.</span>
+            <input type="file" id="profilePicInput" class="form-control" accept="image/jpeg,image/png,image/webp">
+            <input type="hidden" name="cropped_image" id="croppedImageInput">
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Recommended size: 200x200px. Max: 2MB. Adjust and crop after selecting.</span>
           </div>
           
           <div class="form-row">
@@ -282,5 +357,83 @@ require_once __DIR__ . '/../includes/layout_sidebar.php';
       </div>
 
     </div>
+
+  <!-- Cropper Modal -->
+  <div id="cropperModal" class="crop-modal">
+    <div class="crop-container">
+      <div class="crop-header">
+        <h4 style="margin:0; font-family:'Playfair Display', serif;">Adjust Profile Picture</h4>
+        <button type="button" onclick="closeCropper()" style="background:none; border:none; cursor:pointer;"><i class="ph ph-x" style="font-size:1.5rem;"></i></button>
+      </div>
+      <div class="crop-body">
+        <img id="cropImage" src="">
+      </div>
+      <div class="crop-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeCropper()">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="applyCrop()">Apply Crop</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cropper;
+    const profilePicInput = document.getElementById('profilePicInput');
+    const cropperModal = document.getElementById('cropperModal');
+    const cropImage = document.getElementById('cropImage');
+    const croppedImageInput = document.getElementById('croppedImageInput');
+
+    profilePicInput.addEventListener('change', function(e) {
+      const files = e.target.files;
+      if (files && files.length > 0) {
+        const file = files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          cropImage.src = e.target.result;
+          cropperModal.style.display = 'flex';
+          
+          if (cropper) {
+            cropper.destroy();
+          }
+          
+          cropper = new Cropper(cropImage, {
+            aspectRatio: 1,
+            viewMode: 1,
+            autoCropArea: 1,
+            background: false
+          });
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function closeCropper() {
+      cropperModal.style.display = 'none';
+      if (cropper) {
+        cropper.destroy();
+        cropper = null;
+      }
+      profilePicInput.value = '';
+    }
+
+    function applyCrop() {
+      const canvas = cropper.getCroppedCanvas({
+        width: 400,
+        height: 400
+      });
+      
+      const croppedData = canvas.toDataURL('image/webp');
+      croppedImageInput.value = croppedData;
+      
+      // Update preview in UI
+      const avatarBox = document.querySelector('.profile-avatar-large');
+      avatarBox.innerHTML = `<img src="${croppedData}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`;
+      
+      cropperModal.style.display = 'none';
+      if (cropper) {
+        cropper.destroy();
+        cropper = null;
+      }
+    }
+  </script>
 
 <?php require_once __DIR__ . '/../includes/layout_bottom.php'; ?>
